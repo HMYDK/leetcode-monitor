@@ -2,6 +2,8 @@ import json
 from datetime import datetime
 import requests
 
+import dingding_bot
+
 
 def do_query(name: str):
     url = 'https://leetcode.cn/graphql/noj-go/'
@@ -57,5 +59,8 @@ if __name__ == '__main__':
         result = do_query(user)
         results.append(result)
 
+    output_string = ''
     for name, last_day_date, last_day_submissions in results:
-        print(f"{name}最后一天({last_day_date})的提交数: {last_day_submissions}")
+        output_string += f"{name}最后一天({last_day_date})的提交数: {last_day_submissions}\n"
+
+    dingding_bot.send(output_string)
