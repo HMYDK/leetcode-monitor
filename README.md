@@ -8,7 +8,7 @@
 
 2.修改users列表，添加要查询的用户
 
-`vim main.py`
+`vim monitor.py`
 
 3.安装依赖库
 
