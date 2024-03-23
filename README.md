@@ -4,7 +4,7 @@
 ### 使用方法
 1.克隆项目
 
-`git clone https://github.com/dijia-light/leetcode-daily-submissions.git`
+`git clone https://github.com/HMYDK/leetcode-monitor.git`
 
 2.修改users列表，添加要查询的用户
 
@@ -16,15 +16,15 @@ pip install -r requirements.txt
 
 4.运行脚本
 
-`python main.py`
+`python monitor.py`
 
-5.将钉钉机器人地址填写到dingding_bot.py文件中的webhook变量中
+5.将钉钉机器人地址填写到`dingding_bot.py`文件中的`webhook`变量中
 
 ### 项目说明
 - 项目使用requests库发送HTTP请求，获取LeetCode用户提交数据
 - 使用json库解析JSON格式的响应数据
 - 使用datetime库将时间戳转换为日期格式
-- 使用dingding_bot库将结果发送到钉钉群
+- 将结果发送到指定webhook地址
 
 ### 注意事项
 - LeetCode官方API可能会限制请求频率，请勿频繁调用
