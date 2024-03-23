@@ -3,6 +3,10 @@ name: Daily Job
 on:
   schedule:
     - cron: '0 0 * * *' # 每天0点执行
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 jobs:
 
