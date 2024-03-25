@@ -8,17 +8,14 @@
 
 2.修改users列表，添加要查询的用户
 
-`vim monitor.py`
+`修改config.json文件中的users列表`
 
-3.安装依赖库
-
-pip install -r requirements.txt
+3.修改`config.json`中最后发送结果的webhook地址
 
 4.运行脚本
 
 `python monitor.py`
 
-5.将钉钉机器人地址填写到`dingding_bot.py`文件中的`webhook`变量中
 
 ### 项目说明
 - 项目使用requests库发送HTTP请求，获取LeetCode用户提交数据
@@ -36,7 +33,6 @@ pip install -r requirements.txt
 
 ### TODO
 - 支持查询更多日期的提交数
-- 支持其他编程语言的提交数查询
 
 ### 贡献
 欢迎大家对项目进行贡献，包括：
