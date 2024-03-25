@@ -1,0 +1,8 @@
+{
+  "webhook_url": "https://oapi.dingtalk.com/robot/send?access_token=ed5117bd15d23ce4d52c77d284e6f461de874ffcd5782177da7c9cabd0d514da",
+  "users": [
+    "dijia-light",
+    "oddcc",
+    "huang-wei-v"
+  ]
+}
