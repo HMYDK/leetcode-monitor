@@ -11,4 +11,4 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 运行定时任务
-CMD [ "python", "schedule_job.py" ]
+CMD [ "python", "main.py" ]

@@ -1,7 +1,7 @@
 import schedule
 import time
 import monitor
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 
 def job() -> None:
@@ -10,10 +10,12 @@ def job() -> None:
 
 
 def schedule_daily_job(hour: int, minute: int) -> None:
+    # 获取当前时间并转换为东八区时间
+    now = datetime.now(timezone(timedelta(hours=8)))
     # 计算今天的执行时间
-    today = datetime.now().replace(hour=hour, minute=minute, second=0, microsecond=0)
+    today = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
     # 如果当前时间已经超过了设定的时间，就将执行时间移动到第二天
-    if datetime.now() > today:
+    if now > today:
         today += timedelta(days=1)
 
     # 每天的指定时间执行任务
@@ -26,6 +28,4 @@ def schedule_daily_job(hour: int, minute: int) -> None:
 
 
 if __name__ == "__main__":
-    # 指定每天九点执行任务
-    print("定时任务已启动....")
-    schedule_daily_job(14, 30)
+    schedule_daily_job(14, 44)

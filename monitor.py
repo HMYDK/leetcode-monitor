@@ -4,8 +4,8 @@ import requests
 
 import dingding_bot
 import iciba
+import config as project_config
 
-CONFIG_FILE = 'config.json'
 LEETCODE_GRAPHQL_URL = 'https://leetcode.cn/graphql/noj-go/'
 
 HEADERS = {
@@ -50,13 +50,8 @@ def get_last_submission(submission_calendar):
     return last_day_date, last_day_submissions
 
 
-def load_config():
-    with open(CONFIG_FILE) as f:
-        return json.load(f)
-
-
 def do_monitor():
-    config = load_config()
+    config = project_config.load_config()
     users = config['users']
     results = []
     for user in users:

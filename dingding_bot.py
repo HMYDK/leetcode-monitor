@@ -2,17 +2,11 @@
 import json
 
 import requests
-
-CONFIG_FILE = 'config.json'
-
-
-def load_config():
-    with open(CONFIG_FILE) as f:
-        return json.load(f)
+import config as project_config
 
 
 def send(msg: str):
-    config = load_config()
+    config = project_config.load_config()
     webhook_url = config['webhook_url']
 
     # 构造消息体
