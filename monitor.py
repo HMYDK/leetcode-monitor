@@ -55,7 +55,7 @@ def load_config():
         return json.load(f)
 
 
-def main():
+def do_monitor():
     config = load_config()
     users = config['users']
     results = []
@@ -63,16 +63,17 @@ def main():
         submission_calendar = get_user_submission_calendar(user)
         last_day_date, last_day_submissions = get_last_submission(submission_calendar)
         results.append((user, last_day_date, last_day_submissions))
-
     results = sorted(results, key=lambda x: x[1], reverse=True)
-
     output_string = ''
     output_string += iciba.get_daily_sentence()
     output_string += "\n"
     for name, last_day_date, last_day_submissions in results:
         output_string += f"{name}最后一天({last_day_date})的提交数: {last_day_submissions}\n"
-
     dingding_bot.send(output_string)
+
+
+def main():
+    do_monitor()
 
 
 if __name__ == '__main__':

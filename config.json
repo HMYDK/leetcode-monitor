@@ -1,5 +1,5 @@
 {
-  "webhook_url": "https://oapi.dingtalk.com/robot/send?access_token=59141f7bb7c9e806ea667918b47e4d34feac1a41a28859afc3f52ca4772f5005",
+  "webhook_url": "https://oapi.dingtalk.com/robot/send?access_token=ed5117bd15d23ce4d52c77d284e6f461de874ffcd5782177da7c9cabd0d514da",
   "users": [
     "dijia-light",
     "huang-wei-v",

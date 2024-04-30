@@ -12,6 +12,7 @@ def get_daily_sentence():
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
+        print(data)
         return data["content"]
     else:
         raise RuntimeError("请求失败，状态码：{}".format(response.status_code))
