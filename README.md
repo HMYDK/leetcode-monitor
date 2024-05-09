@@ -16,12 +16,15 @@
 
 `python monitor.py`
 
+5.借助github action定时执行程序，发送监控消息
+
+- 修改`.github/workflows/python-app.yml`中的`cron`
 
 ### 项目说明
-- 项目使用requests库发送HTTP请求，获取LeetCode用户提交数据
-- 使用json库解析JSON格式的响应数据
-- 使用datetime库将时间戳转换为日期格式
+- 获取LeetCode用户提交数据
 - 将结果发送到指定webhook地址
+- 支持github action定时执行，发送监控消息
+- 支持docker部署，实现自定义时间发送监控消息
 
 ### 注意事项
 - LeetCode官方API可能会限制请求频率，请勿频繁调用
@@ -30,9 +33,6 @@
 ### 示例输出
 ![image](https://github.com/HMYDK/leetcode-monitor/assets/27269137/9867d903-2b67-413c-b67f-463fa51fce37)
 
-
-### TODO
-- 支持查询更多日期的提交数
 
 ### 贡献
 欢迎大家对项目进行贡献，包括：
