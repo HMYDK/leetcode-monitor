@@ -1,8 +1,9 @@
 import json
 from datetime import datetime
 import requests
+import asyncio
 
-import dingding_bot
+from channel_bot import dingding_bot, telegram_bot
 import iciba
 import config as project_config
 
@@ -64,7 +65,13 @@ def do_monitor():
     output_string += "\n"
     for name, last_day_date, last_day_submissions in results:
         output_string += f"{name}最后一天({last_day_date})的提交数: {last_day_submissions}\n"
-    dingding_bot.send(output_string)
+
+    # 根据配置的不同发送消息
+    channel_type = config['channel_type']
+    if channel_type == 'telegram':
+        asyncio.run(telegram_bot.send(output_string))
+    elif channel_type == 'dingding':
+        dingding_bot.send(output_string)
 
 
 def main():
