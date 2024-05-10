@@ -1,5 +1,16 @@
 ### 项目简介
-该项目用于查询LeetCode用户每日提交数，并支持将结果发送到钉钉群。
+该项目用于查询LeetCode用户每日提交数，并支持将结果发送到指定地址。 
+
+### 项目说明
+- 获取LeetCode用户提交数据
+- 将结果发送到指定终端
+- 支持github action定时执行，发送监控消息
+- 支持docker部署，实现自定义时间发送监控消息
+
+### 目前支持的消息终端：
+- ✅指定webhook url
+- ✅telegram bot
+
 
 ### 使用方法
 1.克隆项目
@@ -20,11 +31,7 @@
 
 - 修改`.github/workflows/python-app.yml`中的`cron`
 
-### 项目说明
-- 获取LeetCode用户提交数据
-- 将结果发送到指定webhook地址
-- 支持github action定时执行，发送监控消息
-- 支持docker部署，实现自定义时间发送监控消息
+
 
 ### 注意事项
 - LeetCode官方API可能会限制请求频率，请勿频繁调用
